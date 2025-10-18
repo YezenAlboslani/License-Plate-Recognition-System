@@ -13,6 +13,17 @@ letters = [
         ]
 
 def read_training_data(training_directory):
+    """
+    Reads and preprocesses training images from the given directory.
+
+    Args:
+        training_directory (str): Path to the folder containing subfolders for each character.
+
+    Returns:
+        tuple: (image_data, target_data)
+            - image_data: numpy array of flattened binary images
+            - target_data: numpy array of corresponding labels
+    """
     image_data = []
     target_data = []
     for each_letter in letters:
@@ -29,6 +40,15 @@ def read_training_data(training_directory):
     return (np.array(image_data), np.array(target_data))
 
 def cross_validation(model, num_of_fold, train_data, train_label):
+    """
+    Performs k-fold cross-validation on the given model and training data.
+
+    Args:
+        model: The machine learning model (e.g., SVM).
+        num_of_fold (int): Number of folds for cross-validation.
+        train_data (array): Feature data.
+        train_label (array): Labels corresponding to the data.
+    """
     accuracy_result = cross_val_score(model, train_data, train_label, cv=num_of_fold)
     print("Cross Validation Result for ", str(num_of_fold), " -fold")
     print(accuracy_result * 100)
