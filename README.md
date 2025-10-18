@@ -33,7 +33,10 @@ The project is divided into three main stages:
 - [Pillow](https://python-pillow.org/)
 - [scikit-learn](https://scikit-learn.org/)
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
+## **How to use**
+1. Clone the repository or download the zip `git clone https://github.com/YezenAlboslani/License-Plate-Recognition-System`
+2. Change to the cloned directory (or extracted directory)
+3. Create a virtual environment with python's
+built-in creator or another
+4. Install all the necessary dependencies by using pip `pip install -r requirements.txt`
+5. Start the program `prediction.py`
